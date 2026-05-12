@@ -14,10 +14,12 @@ return [
     'AI_MODEL' => 'gpt-4o-mini',
     'AI_API_URL' => 'https://api.openai.com/v1/chat/completions',
     'AI_API_KEY' => '', // Add your OpenAI key if needed
+    'USE_AI' => false, // Disable AI content generation
     
     // Image Generation
     'IMAGE_MODEL' => 'gpt-image-1',
     'IMAGE_API_URL' => 'https://api.openai.com/v1/images/generations',
+    'USE_IMAGE_GEN' => false, // Disable image generation
     
     // Social Media Channels
     'TG_CHANNEL' => 'https://t.me/loksewaalert',
