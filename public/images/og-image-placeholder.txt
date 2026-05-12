@@ -1,0 +1,14 @@
+This is a placeholder. You need to create an actual og-image.jpg file.
+
+The OG image should be:
+- Size: 1200x630 pixels (Facebook/WhatsApp/Telegram standard)
+- Format: JPG or PNG
+- Content: JobOne.in logo + tagline "Latest Government Jobs 2026"
+- Background: Professional gradient or solid color
+
+You can create this using:
+1. Canva (free online tool)
+2. Photoshop/GIMP
+3. Online OG image generators
+
+Once created, save it as: public/images/og-image.jpg

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "306245555103",
+    "project_id": "jobone-ea4e2",
+    "storage_bucket": "jobone-ea4e2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306245555103:android:ea69147db3cefe4b94e3aa",
+        "android_client_info": {
+          "package_name": "com.jobone.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbf5dRkYhalOeNqZRXm6dznLNKdmjcGxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

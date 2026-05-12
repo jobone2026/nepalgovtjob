@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notification Test</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Notification Permission Test</h1>
+    <div id="status"></div>
+    <br>
+    <button onclick="testRequest()">Test Request Permission</button>
+    <button onclick="clearStorage()">Clear LocalStorage</button>
+    <button onclick="checkStatus()">Check Status</button>
+    
+    <script>
+        function checkStatus() {
+            const status = document.getElementById('status');
+            status.innerHTML = `
+                <p><strong>Notification.permission:</strong> ${Notification.permission}</p>
+                <p><strong>localStorage notification_permission_asked:</strong> ${localStorage.getItem('notification_permission_asked')}</p>
+                <p><strong>localStorage notifications_enabled:</strong> ${localStorage.getItem('notifications_enabled')}</p>
+                <p><strong>ServiceWorker supported:</strong> ${'serviceWorker' in navigator}</p>
+                <p><strong>PushManager supported:</strong> ${'PushManager' in window}</p>
+            `;
+        }
+        
+        function clearStorage() {
+            localStorage.removeItem('notification_permission_asked');
+            localStorage.removeItem('notifications_enabled');
+            alert('LocalStorage cleared! Reload page to test again.');
+            checkStatus();
+        }
+        
+        async function testRequest() {
+            try {
+                const permission = await Notification.requestPermission();
+                alert('Permission: ' + permission);
+                checkStatus();
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        }
+        
+        // Auto check on load
+        checkStatus();
+        
+        // Auto request after 2 seconds
+        setTimeout(async () => {
+            const hasDecided = localStorage.getItem('notification_permission_asked');
+            if (!hasDecided && Notification.permission === 'default') {
+                console.log('Auto-requesting permission...');
+                const permission = await Notification.requestPermission();
+                console.log('Result:', permission);
+                localStorage.setItem('notification_permission_asked', 'true');
+                checkStatus();
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

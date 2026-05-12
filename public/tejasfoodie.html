@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TejasFoodie – Homemade Snacks Belagavi</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Yatra+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --saffron:#FF6B00;--turmeric:#F5A623;--cream:#FFF8EE;
+  --deep:#1A0A00;--cardamom:#3B1F00;--gold:#D4A017;
+  --sand:#F0DFB8;--wa:#25D366;--wa2:#128C7E;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--deep);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:.8rem 1.8rem;display:flex;align-items:center;justify-content:space-between;background:rgba(26,10,0,.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,107,0,.15)}
+.nav-logo{font-family:'Yatra One',cursive;font-size:1.4rem;color:var(--turmeric)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-weight:700;font-size:.85rem;transition:color .2s}
+.nav-links a:hover{color:var(--turmeric)}
+.wa-nav{display:flex;align-items:center;gap:.45rem;background:var(--wa);color:#fff;border:none;padding:.5rem 1.2rem;border-radius:50px;font-weight:800;font-size:.85rem;cursor:pointer;text-decoration:none;box-shadow:0 4px 14px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s}
+.wa-nav:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(37,211,102,.55)}
+@media(max-width:620px){.nav-links{display:none}}
+
+/* HERO */
+.hero{min-height:100vh;background:radial-gradient(ellipse at top left,#3B1F00 0%,#1A0A00 60%,#0D0500 100%);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:7rem 1.5rem 4rem;text-align:center}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23FF6B00' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.orb{position:absolute;border-radius:50%;opacity:.12;animation:float 7s ease-in-out infinite;pointer-events:none}
+.orb:nth-child(1){width:230px;height:230px;background:var(--saffron);top:6%;left:3%;animation-delay:0s}
+.orb:nth-child(2){width:140px;height:140px;background:var(--turmeric);top:55%;right:5%;animation-delay:2.5s}
+.orb:nth-child(3){width:95px;height:95px;background:#C0392B;bottom:14%;left:16%;animation-delay:4.5s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-22px) rotate(6deg)}}
+.hero-badge{background:linear-gradient(135deg,var(--saffron),var(--turmeric));color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:.38rem 1.2rem;border-radius:2rem;margin-bottom:1.2rem;animation:fadeUp .8s ease forwards}
+.hero-title{font-family:'Yatra One',cursive;font-size:clamp(3.2rem,9vw,7.5rem);color:#fff;line-height:1;text-shadow:0 4px 32px rgba(255,107,0,.5);animation:fadeUp 1s .2s ease forwards;opacity:0}
+.hero-title span{background:linear-gradient(90deg,var(--saffron),var(--turmeric),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-loc{color:rgba(255,255,255,.5);font-size:.82rem;font-weight:700;letter-spacing:.12em;margin-top:.5rem;animation:fadeUp 1s .35s ease forwards;opacity:0}
+.hero-sub{color:rgba(255,255,255,.7);font-size:clamp(.88rem,2vw,1.12rem);margin-top:1rem;max-width:510px;line-height:1.75;animation:fadeUp 1s .45s ease forwards;opacity:0}
+.hero-cta{display:flex;gap:.9rem;margin-top:2.2rem;flex-wrap:wrap;justify-content:center;animation:fadeUp 1s .6s ease forwards;opacity:0}
+.btn-explore{background:linear-gradient(135deg,var(--saffron),var(--turmeric));color:#fff;border:none;padding:.85rem 2rem;border-radius:50px;font-weight:800;font-size:.95rem;cursor:pointer;text-decoration:none;box-shadow:0 8px 24px rgba(255,107,0,.45);transition:transform .2s,box-shadow .2s}
+.btn-explore:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(255,107,0,.55)}
+.btn-wa-hero{display:flex;align-items:center;gap:.55rem;background:var(--wa);color:#fff;border:none;padding:.85rem 1.9rem;border-radius:50px;font-weight:800;font-size:.95rem;cursor:pointer;text-decoration:none;box-shadow:0 8px 24px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s}
+.btn-wa-hero:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(37,211,102,.55)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.scroll-hint{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.3);font-size:.72rem;text-align:center;animation:bounce 2.2s infinite}
+.scroll-hint svg{display:block;margin:.3rem auto 0}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+
+/* FEATURES */
+.features{background:#fff;padding:4rem 1.5rem}
+.sec-hd{text-align:center;margin-bottom:2.2rem}
+.sec-label{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--saffron);margin-bottom:.4rem}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.65rem,4vw,2.5rem);font-weight:900;line-height:1.18;color:var(--cardamom)}
+.sec-title span{color:var(--saffron)}
+.sec-desc{font-size:.88rem;color:#7a5432;margin-top:.5rem;line-height:1.65;max-width:500px;margin-left:auto;margin-right:auto}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:1.2rem;max-width:960px;margin:0 auto}
+.feat-card{background:var(--cream);border-radius:18px;padding:1.35rem 1rem;text-align:center;border-top:3px solid transparent;box-shadow:0 4px 14px rgba(59,31,0,.07);transition:transform .3s,border-color .3s}
+.feat-card:hover{transform:translateY(-5px);border-top-color:var(--saffron)}
+.feat-icon{font-size:2.2rem;margin-bottom:.5rem}
+.feat-title{font-weight:800;font-size:.86rem;color:var(--cardamom);margin-bottom:.18rem}
+.feat-text{font-size:.74rem;color:#8B6347;line-height:1.5}
+
+/* PRODUCTS */
+.products{background:var(--cream);padding:4rem 1.5rem 5rem}
+.tab-bar{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:2.6rem}
+.tab-btn{background:#fff;border:2px solid var(--sand);color:var(--cardamom);padding:.48rem 1.2rem;border-radius:50px;font-weight:800;font-size:.83rem;cursor:pointer;transition:all .24s;white-space:nowrap;box-shadow:0 2px 8px rgba(59,31,0,.06)}
+.tab-btn.active,.tab-btn:hover{background:linear-gradient(135deg,var(--saffron),var(--turmeric));color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(255,107,0,.35)}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(218px,1fr));gap:1.4rem;max-width:1200px;margin:0 auto}
+.product-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 5px 20px rgba(59,31,0,.09);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;transform-style:preserve-3d;cursor:default}
+.product-card:hover{box-shadow:0 18px 44px rgba(59,31,0,.17)}
+.prod-img{height:168px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:4.2rem}
+.prod-img .emoji{transition:transform .3s;z-index:1;position:relative}
+.product-card:hover .emoji{transform:scale(1.18) rotate(-5deg)}
+.prod-tag{position:absolute;top:.6rem;left:.6rem;z-index:2;color:#fff;font-size:.58rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .62rem;border-radius:50px}
+.prod-body{padding:.95rem;flex:1;display:flex;flex-direction:column}
+.prod-name{font-family:'Playfair Display',serif;font-size:.96rem;font-weight:700;color:var(--cardamom);margin-bottom:.22rem}
+.prod-desc{font-size:.75rem;color:#8B6347;line-height:1.5;flex:1}
+.prod-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.8rem;gap:.4rem}
+.prod-price{font-weight:800;font-size:1.05rem;color:var(--saffron);line-height:1}
+.prod-price small{display:block;font-size:.63rem;color:#bbb;font-weight:600}
+.order-btn{display:flex;align-items:center;gap:.3rem;background:var(--wa);color:#fff;border:none;border-radius:50px;padding:.38rem .9rem;font-size:.74rem;font-weight:800;cursor:pointer;transition:background .2s,transform .2s;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.order-btn:hover{background:var(--wa2);transform:scale(1.06)}
+
+/* REVIEWS */
+.reviews{background:linear-gradient(145deg,#1A0A00 0%,#2d1200 50%,#3B1F00 100%);padding:5rem 1.5rem;position:relative;overflow:hidden}
+.reviews::before{content:'⭐';position:absolute;font-size:14rem;opacity:.04;bottom:-2rem;right:-2rem;pointer-events:none}
+.reviews .sec-title{color:#fff}
+.reviews .sec-label{color:var(--turmeric)}
+.reviews .sec-desc{color:rgba(255,255,255,.6);margin-left:auto;margin-right:auto}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1.3rem;max-width:1100px;margin:2.4rem auto 0}
+.review-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,107,0,.18);border-radius:20px;padding:1.4rem 1.3rem;backdrop-filter:blur(8px);transition:transform .3s,background .3s}
+.review-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.1)}
+.review-top{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.review-avatar{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#fff;flex-shrink:0}
+.review-name{font-weight:800;color:#fff;font-size:.9rem}
+.review-place{font-size:.72rem;color:rgba(255,255,255,.45);font-weight:600;margin-top:.08rem}
+.review-stars{color:var(--turmeric);font-size:.85rem;margin-top:.18rem}
+.review-text{font-size:.82rem;color:rgba(255,255,255,.72);line-height:1.65;font-style:italic}
+.review-product{display:inline-block;background:rgba(255,107,0,.18);color:var(--turmeric);font-size:.65rem;font-weight:800;padding:.18rem .6rem;border-radius:50px;margin-top:.7rem}
+
+/* FLOATING WA */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:998}
+.wa-float-btn{display:flex;align-items:center;justify-content:center;width:60px;height:60px;background:var(--wa);color:#fff;border:none;border-radius:50%;font-weight:800;cursor:pointer;text-decoration:none;box-shadow:0 8px 28px rgba(37,211,102,.45);transition:transform .3s,box-shadow .3s}
+.wa-float-btn:hover{transform:scale(1.1);box-shadow:0 12px 38px rgba(37,211,102,.6)}
+@media(max-width:768px){.wa-float{bottom:1.5rem;right:1.5rem}.wa-float-btn{width:56px;height:56px}}
+
+/* FOOTER */
+footer{background:var(--deep);color:rgba(255,255,255,.55);text-align:center;padding:2.8rem 1.5rem;font-size:.82rem}
+.footer-logo{font-family:'Yatra One',cursive;color:var(--turmeric);font-size:1.75rem;margin-bottom:.5rem}
+footer a{color:var(--turmeric);text-decoration:none}
+.footer-wa{display:inline-flex;align-items:center;gap:.4rem;background:var(--wa);color:#fff;padding:.5rem 1.3rem;border-radius:50px;font-weight:800;font-size:.85rem;text-decoration:none;margin:.9rem 0;transition:background .2s}
+.footer-wa:hover{background:var(--wa2)}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WA BUTTON -->
+<a class="wa-float wa-float-btn" href="https://wa.me/918310883091?text=Hi%20TejasFoodie!%20I%20want%20to%20order%20snacks%20%F0%9F%8C%B6%EF%B8%8F" target="_blank" aria-label="Order on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">🌶️ TejasFoodie</div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="wa-nav" href="https://wa.me/918310883091?text=Hi%20TejasFoodie!%20I%20want%20to%20order%20%F0%9F%8C%B6%EF%B8%8F" target="_blank">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Order Now
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="orb"></div><div class="orb"></div><div class="orb"></div>
+  <div class="hero-badge">🏠 100% Homemade · No Preservatives · Fresh Every Batch</div>
+  <h1 class="hero-title">Tejas<span>Foodie</span></h1>
+  <p class="hero-loc">📍 Belagavi, Karnataka</p>
+  <p class="hero-sub">Authentic Karnataka-style homemade snacks — Chakli, Happala, Sandige, Chips &amp; more. Made with love, packed with tradition, delivered fresh.</p>
+  <div class="hero-cta">
+    <a href="#products" class="btn-explore">Explore Products</a>
+    <a class="btn-wa-hero" href="https://wa.me/918310883091?text=Hi%20TejasFoodie!%20I%20want%20to%20place%20an%20order%20%F0%9F%99%8F" target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Order on WhatsApp
+    </a>
+  </div>
+  <div class="scroll-hint">scroll<svg width="14" height="14" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="sec-hd">
+    <span class="sec-label">Why Choose Us?</span>
+    <h2 class="sec-title">Belagavi's Favourite <span>Homemade Snacks</span></h2>
+    <p class="sec-desc">Every bite carries generations of Karnataka tradition — made fresh with pure ingredients right here in Belagavi.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feat-card"><div class="feat-icon">🌿</div><div class="feat-title">No Preservatives</div><div class="feat-text">Pure natural ingredients, no artificial colors or chemicals</div></div>
+    <div class="feat-card"><div class="feat-icon">🏠</div><div class="feat-title">Homemade Quality</div><div class="feat-text">Small batches crafted with love — just like grandma made</div></div>
+    <div class="feat-card"><div class="feat-icon">🚚</div><div class="feat-title">Belagavi Delivery</div><div class="feat-text">Fast home delivery across Belagavi city &amp; surroundings</div></div>
+    <div class="feat-card"><div class="feat-icon">💬</div><div class="feat-title">WhatsApp Orders</div><div class="feat-text">Simple chat-based ordering — no app needed, instant reply</div></div>
+    <div class="feat-card"><div class="feat-icon">🎁</div><div class="feat-title">Gift Packs</div><div class="feat-text">Beautiful combo packs for gifting — perfect for any occasion</div></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="sec-hd">
+    <span class="sec-label">Our Products</span>
+    <h2 class="sec-title">Choose Your <span>Favourite Snack</span></h2>
+    <p class="sec-desc">Tap a category, then tap "Order" on any item to chat directly on WhatsApp and place your order instantly.</p>
+  </div>
+  <div class="tab-bar" id="tabBar">
+    <button class="tab-btn active" data-cat="chakli">🌀 Chakli</button>
+    <button class="tab-btn" data-cat="happala">🌕 Happala</button>
+    <button class="tab-btn" data-cat="sandige">☀️ Sandige</button>
+    <button class="tab-btn" data-cat="chips">🍟 Chips</button>
+    <button class="tab-btn" data-cat="crispy">🌶️ Crispy Snacks</button>
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="sec-hd">
+    <span class="sec-label">Customer Reviews</span>
+    <h2 class="sec-title">Belagavikara <span style="color:var(--turmeric)">Love it! ❤️</span></h2>
+    <p class="sec-desc">Real customers from Belagavi sharing their honest experience with TejasFoodie.</p>
+  </div>
+  <div class="reviews-grid" id="reviewsGrid"></div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-logo">🌶️ TejasFoodie</div>
+  <p>📍 Belagavi, Karnataka · Homemade with ❤️</p>
+  <br>
+  <a class="footer-wa" href="https://wa.me/919XXXXXXXXX?text=Hi%20TejasFoodie!%20I%20want%20to%20order%20%F0%9F%8C%B6%EF%B8%8F" target="_blank">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Chat on WhatsApp
+  </a>
+  <p style="margin-top:.3rem">© 2025 TejasFoodie · <a href="https://tejasfoodie.store" target="_blank">tejasfoodie.store</a></p>
+</footer>
+
+<script>
+const WA = '919XXXXXXXXX'; // ← Replace with your real WhatsApp number e.g. 919876543210
+
+const WA_ICO = `<svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>`;
+
+const products = {
+  chakli:[
+    {name:"Rice Flour Chakli",    emoji:"🌀", desc:"Classic crispy spirals with pure rice flour — light & irresistible.",  tag:"Classic",     price:80,  unit:"250g"},
+    {name:"Butter Chakli",        emoji:"🧈", desc:"Rich buttery twists that melt in your mouth with every bite.",          tag:"Bestseller",  price:100, unit:"250g"},
+    {name:"Spicy Masala Chakli",  emoji:"🌶️",desc:"Fiery masala blend for true spice lovers — bold & crunchy.",           tag:"Spicy",       price:90,  unit:"250g"},
+    {name:"Garlic Chakli",        emoji:"🧄", desc:"Aromatic garlic-infused spirals — bold flavour, perfect crunch.",       tag:"New",         price:95,  unit:"250g"},
+    {name:"Sesame Chakli",        emoji:"⚪", desc:"Nutty sesame seeds woven into every crispy strand.",                    tag:"Healthy",     price:90,  unit:"250g"},
+    {name:"Ragi Chakli",          emoji:"🟤", desc:"Finger-millet goodness meets traditional chakli form.",                 tag:"Healthy",     price:85,  unit:"250g"},
+    {name:"Multigrain Chakli",    emoji:"🌾", desc:"Wholesome grain blend — nutritious meets delicious.",                   tag:"Healthy",     price:90,  unit:"250g"},
+    {name:"Palak Chakli",         emoji:"🥬", desc:"Spinach-enriched green chaklis — vibrant, healthy & tasty.",            tag:"Veggie",      price:90,  unit:"250g"},
+    {name:"Potato Chakli",        emoji:"🥔", desc:"Soft potato dough chaklis with a melt-in-mouth texture.",              tag:"Unique",      price:85,  unit:"250g"},
+    {name:"Coconut Chakli",       emoji:"🥥", desc:"Subtle coconut sweetness blended into crispy spirals.",                tag:"Special",     price:95,  unit:"250g"},
+  ],
+  happala:[
+    {name:"Urad Dal Happala",     emoji:"🌕", desc:"Timeless classic — crispy urad dal papad with authentic taste.",        tag:"Classic",     price:70,  unit:"200g"},
+    {name:"Rice Happala",         emoji:"🍚", desc:"Delicate light rice papads, perfect with dal-chawal.",                  tag:"Light",       price:65,  unit:"200g"},
+    {name:"Sabudana Happala",     emoji:"⭕", desc:"Translucent sago papads that puff beautifully when fried.",             tag:"Festive",     price:75,  unit:"200g"},
+    {name:"Ragi Happala",         emoji:"🟤", desc:"Nutritious finger-millet papads with earthy depth of flavour.",         tag:"Healthy",     price:70,  unit:"200g"},
+    {name:"Moong Dal Happala",    emoji:"💛", desc:"Protein-rich moong dal papads — light, crispy & wholesome.",           tag:"Healthy",     price:70,  unit:"200g"},
+    {name:"Masala Happala",       emoji:"🧂", desc:"Pepper & jeera-spiced papads — adds zing to every meal.",              tag:"Spicy",       price:75,  unit:"200g"},
+    {name:"Garlic Happala",       emoji:"🧄", desc:"Bold garlic papads for an aromatic crispy treat.",                      tag:"Bold",        price:75,  unit:"200g"},
+    {name:"Tomato Happala",       emoji:"🍅", desc:"Tangy tomato-infused papads with gorgeous colour.",                    tag:"Tangy",       price:75,  unit:"200g"},
+    {name:"Jackfruit Happala",    emoji:"🫘", desc:"Unique jackfruit papads — rare Karnataka speciality.",                  tag:"Rare",        price:90,  unit:"200g"},
+    {name:"Multigrain Happala",   emoji:"🌾", desc:"Nutritious grain blend crafted into wholesome papads.",                 tag:"Healthy",     price:75,  unit:"200g"},
+  ],
+  sandige:[
+    {name:"Akki Sandige (Rice)",  emoji:"☀️", desc:"Sun-dried rice fryums — classic, airy & crispy when fried.",          tag:"Classic",     price:55,  unit:"200g"},
+    {name:"Sago Sandige",         emoji:"⚪", desc:"Translucent sabudana fryums that puff perfectly in oil.",              tag:"Popular",     price:60,  unit:"200g"},
+    {name:"Red Chili Sandige",    emoji:"🌶️",desc:"Spicy red chili fryums — a fiery crunchy delight.",                   tag:"Spicy",       price:55,  unit:"200g"},
+    {name:"Buttermilk Sandige",   emoji:"🥛", desc:"Tangy majjige sandige — uniquely flavoured & super crispy.",           tag:"Tangy",       price:55,  unit:"200g"},
+    {name:"Chilli Sandige",       emoji:"🫑", desc:"Majjige menasinakayi — iconic Karnataka-style fryums.",                tag:"Local Fav",   price:55,  unit:"200g"},
+    {name:"Ash Gourd Sandige",    emoji:"🟢", desc:"Traditional boodu kumbalakayi sandige — rustic & authentic.",          tag:"Traditional", price:60,  unit:"200g"},
+    {name:"Potato Sandige",       emoji:"🥔", desc:"Potato fryums with hearty flavour & great crunch.",                   tag:"Hearty",      price:55,  unit:"200g"},
+    {name:"Bitter Gourd Sandige", emoji:"💚", desc:"Kaadu balli sandige — loved by connoisseurs.",                        tag:"Unique",      price:60,  unit:"200g"},
+    {name:"Javvarisi Sandige",    emoji:"🫧", desc:"Tapioca pearl sandige — light, airy & super crunchy.",                 tag:"Airy",        price:55,  unit:"200g"},
+    {name:"Ribbon Sandige",       emoji:"🎀", desc:"Flat ribbon-shaped fryums — fun to eat, great crunch.",               tag:"Fun",         price:50,  unit:"200g"},
+  ],
+  chips:[
+    {name:"Potato Chips (Plain)", emoji:"🍟", desc:"Thinly sliced golden potato chips — the everyday classic.",            tag:"Classic",     price:70,  unit:"150g"},
+    {name:"Masala Potato Chips",  emoji:"🌶️",desc:"Spiced with house masala — can't stop at one!",                       tag:"Spicy",       price:75,  unit:"150g"},
+    {name:"Banana Chips (Raw)",   emoji:"🍌", desc:"Crispy raw banana chips — a coastal-style favourite.",                 tag:"Popular",     price:80,  unit:"150g"},
+    {name:"Sweet Banana Chips",   emoji:"🍯", desc:"Ripe banana chips with subtle sweetness — addictively good!",         tag:"Sweet",       price:80,  unit:"150g"},
+    {name:"Jackfruit Chips",      emoji:"🟡", desc:"Crunchy jackfruit chips — rare seasonal speciality.",                  tag:"Seasonal",    price:100, unit:"150g"},
+    {name:"Tapioca Chips",        emoji:"⚪", desc:"Light crispy tapioca chips from the coast.",                           tag:"Coastal",     price:75,  unit:"150g"},
+    {name:"Sweet Potato Chips",   emoji:"🟠", desc:"Naturally sweet thinly sliced sweet potato crisps.",                  tag:"Healthy",     price:80,  unit:"150g"},
+    {name:"Beetroot Chips",       emoji:"🫀", desc:"Vibrant beetroot chips packed with nutrients.",                        tag:"Healthy",     price:85,  unit:"150g"},
+    {name:"Carrot Chips",         emoji:"🥕", desc:"Crunchy carrot chips — colourful, healthy & tasty.",                  tag:"Healthy",     price:80,  unit:"150g"},
+    {name:"Yam Chips",            emoji:"🟤", desc:"Elephant yam chips — hearty & uniquely flavoured.",                   tag:"Unique",      price:85,  unit:"150g"},
+  ],
+  crispy:[
+    {name:"Rice Flour Sticks",    emoji:"🥢", desc:"Homemade kurkure-style sticks seasoned with spices.",                 tag:"Homemade",    price:65,  unit:"150g"},
+    {name:"Ribbon Pakoda",        emoji:"🎀", desc:"Flat ribbon crispy snack from chickpea flour.",                        tag:"Classic",     price:60,  unit:"150g"},
+    {name:"Thenkuzhal",           emoji:"🌀", desc:"Smooth fine-holed murukku — light & perfectly salted.",               tag:"Classic",     price:70,  unit:"200g"},
+    {name:"Sev (Plain)",          emoji:"🟡", desc:"Fine gram flour sev — great topping or standalone snack.",            tag:"Versatile",   price:55,  unit:"150g"},
+    {name:"Masala Sev",           emoji:"🌶️",desc:"Chili & turmeric sev — perfect with bhel or chaat!",                 tag:"Spicy",       price:60,  unit:"150g"},
+    {name:"Garlic Sev",           emoji:"🧄", desc:"Aromatic garlic sev — bold & deeply satisfying.",                     tag:"Bold",        price:65,  unit:"150g"},
+    {name:"Poha Mixture",         emoji:"🍱", desc:"Crunchy avalakki mixture with nuts, sev & spices.",                   tag:"Mix",         price:80,  unit:"200g"},
+    {name:"Groundnut Snack",      emoji:"🥜", desc:"Spicy coated peanuts — crispy outside, nutty inside.",                tag:"Protein",     price:70,  unit:"150g"},
+    {name:"Masala Makhana",       emoji:"🌟", desc:"Roasted foxnuts with aromatic spices — superfood snack.",             tag:"Healthy",     price:90,  unit:"100g"},
+    {name:"Roasted Chana Mix",    emoji:"🫘", desc:"Crunchy spiced chana mix — high protein, big flavour.",              tag:"Protein",     price:65,  unit:"150g"},
+  ]
+};
+
+const catColors={
+  chakli: ['#FF6B00','#F5A623'],
+  happala:['#2D6A4F','#52B788'],
+  sandige:['#C0392B','#E74C3C'],
+  chips:  ['#8B4513','#D2691E'],
+  crispy: ['#6A0DAD','#9B59B6']
+};
+
+function waLink(p){
+  const msg=encodeURIComponent(`Hi TejasFoodie! 🌶️\nI'd like to order:\n\n*${p.name}* — ₹${p.price}/${p.unit}\n\nKindly confirm availability & delivery to Belagavi. 🙏`);
+  return `https://wa.me/${WA}?text=${msg}`;
+}
+
+function renderProducts(cat){
+  const grid=document.getElementById('productGrid');
+  const[c1,c2]=catColors[cat];
+  grid.innerHTML=products[cat].map((p,i)=>`
+    <div class="product-card" style="animation:fadeUp .4s ${i*.055}s ease both">
+      <div class="prod-img" style="background:linear-gradient(135deg,${c1}22,${c2}35)">
+        <span class="emoji">${p.emoji}</span>
+        <div class="prod-tag" style="background:linear-gradient(135deg,${c1},${c2})">${p.tag}</div>
+      </div>
+      <div class="prod-body">
+        <div class="prod-name">${p.name}</div>
+        <div class="prod-desc">${p.desc}</div>
+        <div class="prod-footer">
+          <span class="prod-price">₹${p.price}<small>${p.unit}</small></span>
+          <a class="order-btn" href="${waLink(p)}" target="_blank">${WA_ICO} Order</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  document.querySelectorAll('.product-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`translateY(-8px) rotateX(${-y*9}deg) rotateY(${x*9}deg)`;
+    });
+    card.addEventListener('mouseleave',()=>{card.style.transform='';});
+  });
+}
+
+document.getElementById('tabBar').addEventListener('click',e=>{
+  const btn=e.target.closest('.tab-btn');
+  if(!btn)return;
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(btn.dataset.cat);
+});
+renderProducts('chakli');
+
+// BELAGAVI REVIEWS
+const reviews=[
+  {name:"Savita Patil",     place:"Tilakwadi, Belagavi",     av:"SP",color:"#FF6B00",stars:5,text:"TejasFoodie chakli is exactly like amma made at home! Ordered butter chakli and masala chakli — both super fresh and crispy. WhatsApp ordering is so easy!",prod:"Butter Chakli"},
+  {name:"Rajesh Desai",     place:"Shivaji Nagar, Belagavi", av:"RD",color:"#2D6A4F",stars:5,text:"Urad dal happala is outstanding! ನಮ್ಮ ಮನೆಯಲ್ಲಿ ಮಾಡಿದ ಹಾಗೆ ಇದೆ! (Just like homemade!) Ordered 3 packets — already finished and re-ordered!",prod:"Urad Dal Happala"},
+  {name:"Priya Kulkarni",   place:"Camp Area, Belagavi",     av:"PK",color:"#C0392B",stars:5,text:"Akki sandige and red chili sandige are divine! Frying them fills the whole house with aroma. Genuine Karnataka taste — so happy I found TejasFoodie!",prod:"Akki Sandige"},
+  {name:"Mahesh Hublikar",  place:"Kanabargi, Belagavi",     av:"MH",color:"#8B4513",stars:5,text:"Banana chips and jackfruit chips are top-class! My kids love them. No maida, no preservatives — finally a healthy snack option. Will order monthly!",prod:"Banana Chips"},
+  {name:"Deepa Naik",       place:"Vadgaon, Belagavi",       av:"DN",color:"#6A0DAD",stars:5,text:"Ribbon pakoda and poha mixture are addictive! Got a combo pack for our office — everyone loved it. Quick WhatsApp order, delivered same day. 10/10!",prod:"Ribbon Pakoda"},
+  {name:"Suresh Angadi",    place:"Angol, Belagavi",         av:"SA",color:"#D4A017",stars:5,text:"Ragi chakli and multigrain happala are perfect for health-conscious people. My mother-in-law approved the taste — that's the biggest compliment!",prod:"Ragi Chakli"},
+  {name:"Kavitha Joshi",    place:"Maratha Colony, Belagavi",av:"KJ",color:"#E74C3C",stars:5,text:"Sent a snack hamper to relatives in Pune through TejasFoodie. They couldn't believe it was homemade! Chilli sandige got special mention. Pure Belagavi taste!",prod:"Chilli Sandige"},
+  {name:"Vikram Pattar",    place:"Udyambag, Belagavi",      av:"VP",color:"#52B788",stars:5,text:"Masala makhana and garlic sev are my evening snack staples now. Ordered thrice already. The masala blend is perfect — not too spicy, just right. Highly recommend!",prod:"Masala Makhana"},
+];
+
+document.getElementById('reviewsGrid').innerHTML=reviews.map((r,i)=>`
+  <div class="review-card" style="animation:fadeUp .5s ${i*.07}s ease both">
+    <div class="review-top">
+      <div class="review-avatar" style="background:${r.color}">${r.av}</div>
+      <div>
+        <div class="review-name">${r.name}</div>
+        <div class="review-place">📍 ${r.place}</div>
+        <div class="review-stars">${'★'.repeat(r.stars)}</div>
+      </div>
+    </div>
+    <div class="review-text">"${r.text}"</div>
+    <span class="review-product">🛒 ${r.prod}</span>
+  </div>
+`).join('');
+</script>
+</body>
+</html>
